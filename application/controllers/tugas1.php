@@ -9,4 +9,18 @@ class tugas1 extends CI_Controller
             
 
     }
-}
+    public function penjumblahan($n1,$n2)
+    {
+        
+        $this->load->model('model_L1');
+        
+        $hasil = $this->modell1->jumlah($n1,$n2);
+        echo "hasil penjumblahan dari ". $n1. "+". $n2. "+". $hasil;
+        
+        $data['nilai1'] = $n1;
+        $data['nilai2'] = $n2;
+        $data['hasil'] = $this->modell1->jumlah($n1, $n2);
+        $this->load->view('view-L1', $data);
+        
+    }
+}   
